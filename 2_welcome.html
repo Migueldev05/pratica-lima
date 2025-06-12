@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="; url=3_login.html">
-    <title>Welcome</title>
-    <img src="https://cdn-icons-png.flaticon.com/512/711/711769.png" width="100" height="100">
-    <style>
-        * {
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-          text-align: center;
-          background-image: url(https://cdn.wallpaperhub.app/cloudcache/2/b/c/3/7/5/2bc375a59ea8bb65dbd995b77ab56cbc3107a651.jpg);
-          background-size: cover;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="; url=3_login.html" />
+  <title>Welcome</title>
+  <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        h2 {
-            font-size: 3rem;
-        }
+    body, html {
+      height: 100vh;
+      background-image: url('https://images-ext-1.discordapp.net/external/w8Oq0cyS_WY09p3e-6aekS4DRR8TGuj2taWGs1yLnKU/https/images.wallpapersden.com/image/download/windows-11-black_bG1mbWWUmZqaraWkpJRobWllrWdpZWU.jpg?format=webp&width=1189&height=743');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 5rem;
-            color: darkblue;
-            text-align:center;
-        }
+    .icon {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+    }
 
-    </style>
+    h1 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    #horario {
+      font-size: 160px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome</h1>
-    <h2>00:00</h2>
+  <!-- Ícone do usuário -->
+  <img src="https://cdn-icons-png.flaticon.com/512/711/711769.png" alt="Usuário" class="icon">
+
+  <!-- Nome do usuário -->
+  <h1>Usuário 1DSI</h1>
+
+  <!-- Relógio -->
+  <div id="horario">00:00</div>
+
+  <script>
+    function atualizarHorario() {
+      const agora = new Date();
+      const horas = String(agora.getHours()).padStart(2, '0');
+      const minutos = String(agora.getMinutes()).padStart(2, '0');
+      document.getElementById("horario").textContent = `${horas}:${minutos}`;
+    }
+
+    setInterval(atualizarHorario, 1000);
+    atualizarHorario();
+  </script>
 </body>
 </html>

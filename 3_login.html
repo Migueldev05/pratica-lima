@@ -1,35 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5; url=4_desktop.html">
-    <title>Login</title>
-    <img src="https://cdn-icons-png.flaticon.com/512/711/711769.png" width="200" height="200">
-    <style>
-        * {
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="5; url=4_desktop.html">
+  <title>Login</title>
+  <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        h1 {
-            font-size: 3rem;
-        }
+    body {
+      text-align: center;
+      background-image: url('https://images-ext-1.discordapp.net/external/w8Oq0cyS_WY09p3e-6aekS4DRR8TGuj2taWGs1yLnKU/https/images.wallpapersden.com/image/download/windows-11-black_bG1mbWWUmZqaraWkpJRobWllrWdpZWU.jpg?format=webp&width=1189&height=743');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-        h2 {
-            font-size: 2rem;
-        }
+    .icon {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+    }
 
-        body {
-            text-align: center;  
-            background-image: url(https://cdn.wallpaperhub.app/cloudcache/2/b/c/3/7/5/2bc375a59ea8bb65dbd995b77ab56cbc3107a651.jpg); 
-            background-size: cover;
-        }
-    </style>
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    #relogio {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    #data {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      width: 250px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>Insira a senha</h1>
-    <h1>00:00</h1>
-    <h2> quarta-feira, dia 11</h2>
-    <input type="text" name="senha">
+  <img src="https://cdn-icons-png.flaticon.com/512/711/711769.png" alt="Usuário" class="icon">
+
+  <h1>Insira a senha</h1>
+  <div id="relogio">00:00</div>
+  <div id="data">quarta-feira, 11 de junho</div>
+
+  <input type="text" name="senha" placeholder="Digite a senha...">
+
+  <script>
+    function atualizarRelogio() {
+      const agora = new Date();
+      const horas = String(agora.getHours()).padStart(2, '0');
+      const minutos = String(agora.getMinutes()).padStart(2, '0');
+      document.getElementById('relogio').textContent = `${horas}:${minutos}`;
+    }
+
+    function atualizarData() {
+      const agora = new Date();
+      const diasSemana = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"];
+      const diaSemana = diasSemana[agora.getDay()];
+      const dia = agora.getDate();
+      const mes = agora.toLocaleString('pt-BR', { month: 'long' });
+
+      document.getElementById('data').textContent = `${diaSemana}, ${dia} de ${mes}`;
+    }
+
+    setInterval(atualizarRelogio, 1000);
+    atualizarRelogio();
+    atualizarData();
+  </script>
 </body>
 </html>
