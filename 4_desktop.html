@@ -11,28 +11,40 @@
         }
 
         body {
-            background-image: url('https://images-ext-1.discordapp.net/external/w8Oq0cyS_WY09p3e-6aekS4DRR8TGuj2taWGs1yLnKU/https/images.wallpapersden.com/image/download/windows-11-black_bG1mbWWUmZqaraWkpJRobWllrWdpZWU.jpg?format=webp&width=1189&height=743');
+            background-image: url('https://images2.alphacoders.com/131/1316862.png');
             background-size: cover;
         }
 
         h1 {
-        color: gray;
+        color: whitesmoke;
         font-size: 1rem;
+        text-align: center;
         }
 
-      footer {
-        margin-top:700px; 
+
+    .container {
+        display: grid;
+        grid-template-areas:
+        "footer footer";
+        grid-template-columns: 30rem 35rem;
+        background-color: whitesmoke;
+        padding: 10px;
         text-align: center;
-        border: 2px solid gray;
-        background-color: gray;
-        opacity: 0.6;
-      }
+        margin-top: 576px;
+    } 
+    .container > div {
+        background-color: whitesmoke;
+    }
+
+    .container > div.footer {
+        grid-area: footer;
+    }
     </style>
 </head>
 <body>
     <style>
 
     </style>
-    <footer><h1>teste</h1></footer>
+<div class="container"> <h1> <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/91d52475-1788-4638-a5aa-d1eefcde9419/dgh683s-3b410b34-33b9-4265-a776-72aeea824000.png" height="28" width="28"> </h1></div>
 </body>
 </html>
